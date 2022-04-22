@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "PHOTOSHOP",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "PHOTOSHOP::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PHOTOSHOP-Debug-a3b2ef93a1a03f9d4433.json",
+					"name" : "PHOTOSHOP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "PHOTOSHOP_1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PHOTOSHOP_1-Debug-03f586a9985164a547a2.json",
+					"name" : "PHOTOSHOP_1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "PHOTOSHOP_2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PHOTOSHOP_2-Debug-902af9f4425e45079ac6.json",
+					"name" : "PHOTOSHOP_2",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/LENOVO/CLionProjects/PHOTOSHOP/cmake-build-debug",
+		"source" : "C:/Users/LENOVO/CLionProjects/PHOTOSHOP"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
