@@ -8,6 +8,7 @@ using namespace std;
 unsigned char image [SIZE][SIZE];
 unsigned char new_matrix[SIZE][SIZE];
 unsigned char helper_matrix[SIZE][SIZE];
+int temp;
 void loadimage()
 {
     char imagefilename[100];
@@ -25,7 +26,7 @@ void saveimage(unsigned char arr[SIZE][SIZE])
     strcat(imagefilename,".bmp");
     writeGSBMP(imagefilename,arr);      //it saves the file
 }
-void enlarge_image()
+/*void enlarge_image()
 {
     int answer;
     cout << "please choose whether you want to enlarge the 1st or 2nd or 3rd or 4th quarter";
@@ -57,7 +58,9 @@ void enlarge_image()
         {
             for (int j = 0; j < SIZE; j++)
             {
-                second_quarter_matrix[i][j] = image[i / 2][(j / 2) + 128];
+                new_matrix[i][j] = image[r][c];
+                c++;
+               /* second_quarter_matrix[i][j] = image[i / 2][(j / 2) + 128];
                   for (int k=0;k<SIZE/2;k+=2)
                   {
                       for(int z=0;z<SIZE/2;z+=2)
@@ -68,9 +71,10 @@ void enlarge_image()
                           helper_matrix[k][z]=second_quarter_matrix[i][j+1];
                           helper_matrix[k][z]=second_quarter_matrix[i+1][j];
                       }
-                  }
-            }
-        }saveimage(helper_matrix);
+                  }     */
+           /* }
+        }r++
+        saveimage(helper_matrix);
             /* for (int i=0;i<SIZE;i+=2)
              {
                  for (int j=0;j<SIZE;j+=2)
@@ -81,7 +85,7 @@ void enlarge_image()
                  l=SIZE/2;
                  k++;
              }saveimage(second_quarter_matrix);*/
-    }
+  //  }
         /*   else if (answer == 3)
            {
                unsigned char third_quarter_matrix[SIZE][SIZE];
@@ -105,7 +109,7 @@ void enlarge_image()
                saveimage(fourth_quarter_matrix);
            }
        } */
-    if (answer == 5) {
+  /*  if (answer == 5) {
         unsigned char first_quarter_matrix[SIZE][SIZE];
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -183,4 +187,204 @@ void enlarge_image()
         loadimage();
         enlarge_image();
         return 0;
-    }
+    } */
+
+
+
+
+
+
+
+
+  void shuffle_image()
+  {
+      int firstquarter, secondquarter, thirdquarter, fourthquarter;
+      cout << "please enter the number of the first quarter you want it,if you want it to be the first put 1,"
+              "if you want it to be the  second put 2,if you want it to be the third put 3,"
+              "and if you want it to be the first put 4";
+      cin >> firstquarter;
+      if (firstquarter == 1)
+      {
+          //unsigned char first_quarter_matrix[SIZE][SIZE];
+          for (int i = 0; i<128; i++)
+          {
+              for (int j = 0; j < 128; j++)
+              {
+                          new_matrix[i][j] = image[i][j];
+              }
+          }
+          //saveimage(new_matrix);
+      } else if (firstquarter == 2)
+      {
+          for (int i = 0,r=0; i < 128; i++,r++)
+          {
+              for (int j = 128,c=0; c < 128; j++,c++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }//saveimage(new_matrix);
+      } else if (firstquarter == 3)
+      {
+          for (int i = 128,r=0; r < 128; i++,r++)
+          {
+              for (int j = 0,c=0; j < 128; j++,c++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }//saveimage(new_matrix);
+      } else if (firstquarter == 4)
+      {
+          for (int i = 128,r=0; r < 128; i++,r++)
+          {
+              for (int j = 128,c=0; c < 128; j++,c++)
+              {
+
+                          new_matrix[r][c] = image[i][j];
+
+              }
+          }//saveimage(new_matrix);
+      }
+      cout << "please enter the number of the second quarter you want it,if you want it to be the first put 1,"
+              "if you want it to be the  second put 2,if you want it to be the third put 3,"
+              "and if you want it to be the first put 4";
+      cin >> secondquarter;
+      if (secondquarter == 1)
+      {
+          // unsigned char first_quarter_matrix[SIZE][SIZE];
+          for (int i = 0,r=0; i < 128; r++,i++)
+          {
+              for (int j = 0,c=128; j < 128; c++,j++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }//saveimage(new_matrix);
+      } else if (secondquarter == 2)
+      {
+          for (int i = 0,r=0; i < 128; r++,i++)
+          {
+              for (int j = 128,c=128; j < 256; c++,j++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }
+      }
+      else if (secondquarter==3)
+      {
+          for (int i = 128,r=0; r < 128; r++,i++)
+          {
+              for (int j = 0,c=128; j < 128; c++,j++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }
+      }
+      else if (secondquarter==4)
+      {
+          for (int i = 128,r=0; r < 128; r++,i++)
+          {
+              for (int j = 128,c=128; j < 256; j++,c++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }
+      }
+      cout<<"please enter the number of the third quarter you want it,if you want it to be the first put 1,"
+            "if you want it to be the  second put 2,if you want it to be the third put 3,"
+            "and if you want it to be the first put 4";
+      cin>>thirdquarter;
+      if (thirdquarter==1)
+      {
+          for (int i = 0,r=128; r<256; i++,r++)
+          {
+              for (int j = 0,c=0; c < 128; c++,j++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }
+      }
+      else if (thirdquarter==2)
+      {
+          for (int i = 0,r=128; i < 128; i++,r++)
+          {
+              for (int j = 128,c=0;c < 128; j++,c++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }
+      }
+      else if (thirdquarter==3)
+      {
+          for (int i = 128,r=128; i < 256; r++,i++)
+          {
+              for (int j = 0,c=0; j < 128; c++,j++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }
+      }
+      else if (thirdquarter==4)
+      {
+          for (int i = 128,r=128; i < 256; r++,i++)
+          {
+              for (int j = 128,c=0; c < 128; c++,j++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }
+      }
+      cout<<"please enter the number of the fourth quarter you want it,if you want it to be the first put 1,"
+            "if you want it to be the  second put 2,if you want it to be the third put 3,"
+            "and if you want it to be the first put 4";
+      cin>>fourthquarter;
+      if (fourthquarter==1)
+      {
+          for (int i = 0,r=128; i < 128; r++,i++)
+          {
+              for (int j = 0,c=128; j < 128; c++,j++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }
+      }
+      else if (fourthquarter==2)
+      {
+          for (int i = 0,r=128; i < 128; i++,r++)
+          {
+              for (int j = 128,c=128; j < 256; j++,c++)
+              {
+                          new_matrix[r][c] = image[i][j];
+              }
+          }
+      }
+      else if (fourthquarter == 3)
+      {
+          for (int i = 128,r=128; i < 256; r++,i++)
+          {
+              for (int j = 0,c=128; j < 128; c++,j++)
+              {
+
+                          new_matrix[r][c] = image[i][j];
+              }
+          }
+      }
+
+      else if (fourthquarter == 4)
+      {
+          for (int i = 128,r=128; i < 256; r++,i++)
+          {
+              for (int j = 128,c=128; j < 256; c++,j++)
+              {
+                          new_matrix[r][c] = image[i][j];
+
+              }
+
+          }
+      }
+
+      saveimage(new_matrix);}
+  int main()
+  {
+      loadimage();
+      shuffle_image();
+      return 0;
+  }
