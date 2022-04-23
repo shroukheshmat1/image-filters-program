@@ -7,6 +7,7 @@ using namespace std;
 
 unsigned char image [SIZE][SIZE];
 unsigned char new_matrix[SIZE][SIZE];
+unsigned char helper_matrix[SIZE][SIZE];
 void loadimage()
 {
     char imagefilename[100];
@@ -24,74 +25,6 @@ void saveimage(unsigned char arr[SIZE][SIZE])
     strcat(imagefilename,".bmp");
     writeGSBMP(imagefilename,arr);      //it saves the file
 }
-
-void invert_image()
-{
-    for (int i=0;i<SIZE;i++)
-    {
-        for (int j=0;j<SIZE;j++)
-        {
-            image[i][j] = 255 - image[i][j];
-        }
-    }
-}
-
-void rotate_image()
-{
-    string degree;
-    cout<<"please enter whether you want to rotate the image by 90 degrees or 180 degrees or 270 degrees"<<"\n";
-    cin>>degree;
-    if (degree=="270")
-    {
-        for (int i=0;i<SIZE;i++)
-        {
-            for (int j=0;j<SIZE;j++)
-            {
-                new_matrix[i][j]=image[j][i] ;
-            }
-        }
-
-      /*  for (int i=0;i<SIZE;i++)
-        {
-            for (int j=0;j<(SIZE/2);j++)
-            {
-                int temp=image[i][j];
-                image[i][j]=image[i][SIZE-1-j];
-                image[i][SIZE-1-j]=temp;
-            }
-        }*/
-    }
-    else if (degree=="180")
-    {
-        for (int i=0;i<SIZE;i++)
-        {
-            for (int j=0;j<SIZE;j++)
-            {
-               new_matrix[i][j]=image[255-i][255-j];
-
-            }
-        }
-    }
-    else if (degree=="90")
-    {
-        unsigned char helper_matrix[SIZE][SIZE];
-        for (int i=0;i<SIZE;i++)
-        {
-            for (int j=0;j<SIZE;j++)
-            {
-                /*helper_matrix[i][j]=image[j][255-i];
-                new_matrix[i][j]=helper_matrix[255-i][255-j];*/
-             // helper_matrix[i][j]=image[255-j][255-i];
-              helper_matrix[i][j]=image[255-(255-j)][255-i];         //270//
-              new_matrix[i][j]=image[255-(255-(255-j))][255-(255-i)];
-
-            }
-        }
-    }
-    saveimage(new_matrix);
-}
-
-
 void enlarge_image()
 {
     int answer;
@@ -119,7 +52,7 @@ void enlarge_image()
                 second_quarter_matrix[i][j+1]=image[k][z];
             }
         }
-        for (int i = 0; i < SIZE; i++)
+         for (int i = 0; i < SIZE; i++)
         {
             for (int j = 0; j < SIZE; j++)
             {
@@ -181,17 +114,17 @@ void shuffle_image()
     if (firstquarter==1)
     {
         //unsigned char first_quarter_matrix[SIZE][SIZE];
-                for (int i = 0; i < 128; i++)
-                {
-                    for (int j = 0; j < 128; j++)
-                    {
-                        new_matrix[i][j] = image[i][j];
-                    }
-                }//saveimage(new_matrix);
+        for (int i = 0; i < 128; i++)
+        {
+            for (int j = 0; j < 128; j++)
+            {
+                new_matrix[i][j] = image[i][j];
+            }
+        }//saveimage(new_matrix);
     }
     else if (firstquarter==2)
     {
-       // unsigned char second_quarter_matrix[SIZE][SIZE];
+        // unsigned char second_quarter_matrix[SIZE][SIZE];
         for (int i=0;i<SIZE;i++)
         {
             for (int j=SIZE/2;j<SIZE;j++)
@@ -202,7 +135,7 @@ void shuffle_image()
     }
     else if (firstquarter==3)
     {
-       // unsigned char third_quarter_matrix[SIZE][SIZE];
+        // unsigned char third_quarter_matrix[SIZE][SIZE];
         for (int i=SIZE/2;i<SIZE;i++)
         {
             for (int j=0;j<SIZE/2;j++)
@@ -213,7 +146,7 @@ void shuffle_image()
     }
     else if (firstquarter==4)
     {
-       // unsigned char fourth_quarter_matrix[SIZE][SIZE];
+        // unsigned char fourth_quarter_matrix[SIZE][SIZE];
         for (int i=SIZE/2;i<SIZE;i++)
         {
             for (int j=SIZE/2;j<SIZE;j++)
@@ -228,8 +161,8 @@ void shuffle_image()
     cin>>secondquarter;
     if (secondquarter==1)
     {
-       // unsigned char first_quarter_matrix[SIZE][SIZE];
-        for (int i=0;i<SIZE;i++)
+        // unsigned char first_quarter_matrix[SIZE][SIZE];
+        for (int i=0;i<128;i++)
         {
             for (int j=0;j<SIZE;j++)
             {
@@ -250,7 +183,7 @@ void shuffle_image()
     }
     else if (secondquarter==3)
     {
-       // unsigned char third_quarter_matrix[SIZE][SIZE];
+        // unsigned char third_quarter_matrix[SIZE][SIZE];
         for (int i=SIZE/2;i<SIZE;i++)
         {
             for (int j=0;j<SIZE/2;j++)
@@ -276,8 +209,8 @@ void shuffle_image()
     cin>>secondquarter;
     if (thirdquarter==1)
     {
-       // unsigned char first_quarter_matrix[SIZE][SIZE];
-        for (int i=0;i<SIZE;i++)
+        // unsigned char first_quarter_matrix[SIZE][SIZE];
+        for (int i=0;i<128;i++)
         {
             for (int j=0;j<SIZE;j++)
             {
@@ -287,8 +220,8 @@ void shuffle_image()
     }
     else if (thirdquarter==2)
     {
-      //  unsigned char second_quarter_matrix[SIZE][SIZE];
-        for (int i=0;i<SIZE;i++)
+        //  unsigned char second_quarter_matrix[SIZE][SIZE];
+        for (int i=0;SIZE;i++)
         {
             for (int j=SIZE/2;j<SIZE;j++)
             {
@@ -309,7 +242,7 @@ void shuffle_image()
     }
     else if (thirdquarter==4)
     {
-       // unsigned char fourth_quarter_matrix[SIZE][SIZE];
+        // unsigned char fourth_quarter_matrix[SIZE][SIZE];
         for (int i=SIZE/2;i<SIZE;i++)
         {
             for (int j=SIZE/2;j<SIZE;j++)
@@ -324,8 +257,8 @@ void shuffle_image()
     cin>>secondquarter;
     if (fourthquarter==1)
     {
-      //  unsigned char first_quarter_matrix[SIZE][SIZE];
-        for (int i=0;i<SIZE;i++)
+        //  unsigned char first_quarter_matrix[SIZE][SIZE];
+        for (int i=0;i<128;i++)
         {
             for (int j=0;j<SIZE;j++)
             {
@@ -335,7 +268,7 @@ void shuffle_image()
     }
     else if (fourthquarter==2)
     {
-       // unsigned char second_quarter_matrix[SIZE][SIZE];
+        // unsigned char second_quarter_matrix[SIZE][SIZE];
         for (int i=0;i<SIZE;i++)
         {
             for (int j=SIZE/2;j<SIZE;j++)
@@ -357,7 +290,7 @@ void shuffle_image()
     }
     else if (fourthquarter==4)
     {
-       // unsigned char fourth_quarter_matrix[SIZE][SIZE];
+        // unsigned char fourth_quarter_matrix[SIZE][SIZE];
         for (int i=SIZE/2;i<SIZE;i++)
         {
             for (int j=SIZE/2;j<SIZE;j++)
@@ -373,3 +306,5 @@ int main()
     shuffle_image();
     return 0;
 }
+
+

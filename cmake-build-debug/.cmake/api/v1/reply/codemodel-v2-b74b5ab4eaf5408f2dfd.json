@@ -17,7 +17,9 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3,
+						4
 					]
 				}
 			],
@@ -34,7 +36,9 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3,
+						4
 					]
 				}
 			],
@@ -59,6 +63,20 @@
 					"id" : "PHOTOSHOP_2::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-PHOTOSHOP_2-Debug-902af9f4425e45079ac6.json",
 					"name" : "PHOTOSHOP_2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "PHOTOSHOP_3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PHOTOSHOP_3-Debug-997111c34014edbeeae4.json",
+					"name" : "PHOTOSHOP_3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "PHOTOSHOP_4::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PHOTOSHOP_4-Debug-2fd65ce3df5ea3dce80e.json",
+					"name" : "PHOTOSHOP_4",
 					"projectIndex" : 0
 				}
 			]

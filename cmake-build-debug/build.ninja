@@ -139,6 +139,72 @@ build PHOTOSHOP_2.exe: CXX_EXECUTABLE_LINKER__PHOTOSHOP_2_Debug CMakeFiles/PHOTO
   TARGET_IMPLIB = libPHOTOSHOP_2.dll.a
   TARGET_PDB = PHOTOSHOP_2.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target PHOTOSHOP_3
+
+
+#############################################
+# Order-only phony target for PHOTOSHOP_3
+
+build cmake_object_order_depends_target_PHOTOSHOP_3: phony || CMakeFiles/PHOTOSHOP_3.dir
+
+build CMakeFiles/PHOTOSHOP_3.dir/trial.cpp.obj: CXX_COMPILER__PHOTOSHOP_3_Debug C$:/Users/LENOVO/CLionProjects/PHOTOSHOP/trial.cpp || cmake_object_order_depends_target_PHOTOSHOP_3
+  DEP_FILE = CMakeFiles\PHOTOSHOP_3.dir\trial.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\PHOTOSHOP_3.dir
+  OBJECT_FILE_DIR = CMakeFiles\PHOTOSHOP_3.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target PHOTOSHOP_3
+
+
+#############################################
+# Link the executable PHOTOSHOP_3.exe
+
+build PHOTOSHOP_3.exe: CXX_EXECUTABLE_LINKER__PHOTOSHOP_3_Debug CMakeFiles/PHOTOSHOP_3.dir/trial.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\PHOTOSHOP_3.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = PHOTOSHOP_3.exe
+  TARGET_IMPLIB = libPHOTOSHOP_3.dll.a
+  TARGET_PDB = PHOTOSHOP_3.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target PHOTOSHOP_4
+
+
+#############################################
+# Order-only phony target for PHOTOSHOP_4
+
+build cmake_object_order_depends_target_PHOTOSHOP_4: phony || CMakeFiles/PHOTOSHOP_4.dir
+
+build CMakeFiles/PHOTOSHOP_4.dir/trial22.cpp.obj: CXX_COMPILER__PHOTOSHOP_4_Debug C$:/Users/LENOVO/CLionProjects/PHOTOSHOP/trial22.cpp || cmake_object_order_depends_target_PHOTOSHOP_4
+  DEP_FILE = CMakeFiles\PHOTOSHOP_4.dir\trial22.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\PHOTOSHOP_4.dir
+  OBJECT_FILE_DIR = CMakeFiles\PHOTOSHOP_4.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target PHOTOSHOP_4
+
+
+#############################################
+# Link the executable PHOTOSHOP_4.exe
+
+build PHOTOSHOP_4.exe: CXX_EXECUTABLE_LINKER__PHOTOSHOP_4_Debug CMakeFiles/PHOTOSHOP_4.dir/trial22.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\PHOTOSHOP_4.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = PHOTOSHOP_4.exe
+  TARGET_IMPLIB = libPHOTOSHOP_4.dll.a
+  TARGET_PDB = PHOTOSHOP_4.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -171,6 +237,10 @@ build PHOTOSHOP_1: phony PHOTOSHOP_1.exe
 
 build PHOTOSHOP_2: phony PHOTOSHOP_2.exe
 
+build PHOTOSHOP_3: phony PHOTOSHOP_3.exe
+
+build PHOTOSHOP_4: phony PHOTOSHOP_4.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -179,7 +249,7 @@ build PHOTOSHOP_2: phony PHOTOSHOP_2.exe
 #############################################
 # Folder: C:/Users/LENOVO/CLionProjects/PHOTOSHOP/cmake-build-debug
 
-build all: phony PHOTOSHOP.exe PHOTOSHOP_1.exe PHOTOSHOP_2.exe
+build all: phony PHOTOSHOP.exe PHOTOSHOP_1.exe PHOTOSHOP_2.exe PHOTOSHOP_3.exe PHOTOSHOP_4.exe
 
 # =============================================================================
 # Built-in targets

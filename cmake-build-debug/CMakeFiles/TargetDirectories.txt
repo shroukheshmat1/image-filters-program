@@ -1,5 +1,7 @@
 C:/Users/LENOVO/CLionProjects/PHOTOSHOP/cmake-build-debug/CMakeFiles/PHOTOSHOP.dir
 C:/Users/LENOVO/CLionProjects/PHOTOSHOP/cmake-build-debug/CMakeFiles/PHOTOSHOP_1.dir
 C:/Users/LENOVO/CLionProjects/PHOTOSHOP/cmake-build-debug/CMakeFiles/PHOTOSHOP_2.dir
+C:/Users/LENOVO/CLionProjects/PHOTOSHOP/cmake-build-debug/CMakeFiles/PHOTOSHOP_3.dir
+C:/Users/LENOVO/CLionProjects/PHOTOSHOP/cmake-build-debug/CMakeFiles/PHOTOSHOP_4.dir
 C:/Users/LENOVO/CLionProjects/PHOTOSHOP/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/LENOVO/CLionProjects/PHOTOSHOP/cmake-build-debug/CMakeFiles/rebuild_cache.dir
